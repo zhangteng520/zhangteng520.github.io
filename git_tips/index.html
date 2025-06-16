@@ -97,11 +97,30 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#github" class="nav-link">配置全局用户信息（独立于GitHub用户名）</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-bs-level="1"><a href="#github" class="nav-link">配置全局用户信息（独立于GitHub用户名）</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">仓库操作</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">分支管理</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">提高工作流</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">历史查看</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">撤销操作</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -129,47 +148,44 @@ touch .gitignore
 *.log
 /temp/
 !important.log  # 例外规则
+</code></pre>
+<blockquote>
+<p><strong>注意事项</strong></p>
+</blockquote>
+<pre><code>    # 已跟踪文件需要移除缓存
+    git rm --cached config.ini
+</code></pre>
+<h2 id="github">配置全局用户信息（独立于GitHub用户名）</h2>
+<pre><code>git config --global user.name &quot;您的姓名&quot;
+git config --global user.email &quot;your-email@example.com&quot;
+</code></pre>
+<h2 id="_3">仓库操作</h2>
+<pre><code>git init  # 初始化仓库
+git clone https://...  # 克隆远程仓库
 
-&gt; **注意事项**
 </code></pre>
-<pre><code># 已跟踪文件需要移除缓存
-git rm --cached config.ini
-</code></pre>
-<pre><code>
-</code></pre>
-<h1 id="github">配置全局用户信息（独立于GitHub用户名）</h1>
-<p>git config --global user.name "您的姓名"
-git config --global user.email "your-email@example.com"</p>
-<pre><code>## 仓库操作
-</code></pre>
-<p>git init  # 初始化仓库
-git clone https://...  # 克隆远程仓库</p>
-<pre><code>
-## 分支管理
-</code></pre>
-<p>git branch -a  # 查看所有分支
+<h2 id="_4">分支管理</h2>
+<pre><code>git branch -a  # 查看所有分支
+git branch -m &lt;新分支名称&gt; #修改当前分支名称
 git checkout -b new-feature  # 创建并切换分支
-git merge feature-branch  # 合并分支</p>
-<pre><code>
-## 提高工作流
+git merge feature-branch  # 合并分支
 </code></pre>
-<p>git status  # 查看状态
+<h2 id="_5">提高工作流</h2>
+<pre><code>git status  # 查看状态
 git add .  # 添加所有修改
-git commit -m "Message"  # 创建提交
+git commit -m &quot;Message&quot;  # 创建提交
 git pull origin main #拉去最新的仓库
-git push -u origin main  # 推送到远程</p>
-<pre><code>
-## 历史查看
+git push -u origin main  # 推送到远程
 </code></pre>
-<p>git log --oneline --graph  # 简洁图形化历史
-git diff HEAD~1  # 与前一提交比较</p>
-<pre><code>
-## 撤销操作
+<h2 id="_6">历史查看</h2>
+<pre><code>git log --oneline --graph  # 简洁图形化历史
+git diff HEAD~1  # 与前一提交比较
 </code></pre>
-<p>git restore file.txt  # 丢弃工作区修改
+<h2 id="_7">撤销操作</h2>
+<pre><code>git restore file.txt  # 丢弃工作区修改
 git reset --soft HEAD~1  # 撤销提交但保留修改
 git revert commit-id  # 创建撤销提交
-```</p></div>
+</code></pre></div>
             </div>
         </div>
 
