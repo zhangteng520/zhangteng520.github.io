@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <style>
+    /* 隐藏额外的导航栏 */
+    .md-header__inner,
+    .md-tabs {
+      display: none !important;
+    }
+    
+    /* 只保留一个导航栏 */
+    .md-header[data-md-state=shadow] {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2);
+    }
+  </style>
+{% endblock %}
