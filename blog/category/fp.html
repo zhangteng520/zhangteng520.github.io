@@ -1215,55 +1215,13 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="nvidia-cuda-fma"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html">NVIDIA CUDA 浮点运算与 FMA 笔记</a></h2>
-<h3 id="1-ieee-754"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#1-ieee-754">1. IEEE 754 浮点标准简介</a></h3>
-<ul>
-<li>主流计算系统（包括 NVIDIA CUDA 架构）均实现 IEEE 754 浮点标准。</li>
-<li>浮点数由三部分组成：符号位、指数位（带偏移）、尾数（有效数字）。</li>
-<li>常用格式：float（32位）、double（64位）。</li>
-<li>由于位数有限，许多实数无法精确表示，需舍入（常用舍入模式为“最近偶数”）。</li>
-</ul>
-<h3 id="2"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#2">2. 浮点运算与精度</a></h3>
-<ul>
-<li>IEEE 754 标准规定了加、减、乘、除、平方根、FMA（融合乘加）、取余、转换、缩放、符号操作和比较等运算。</li>
-<li>浮点运算不满足数学上的结合律、分配律等，运算顺序会影响结果。</li>
-<li>示例：A+B+C 的运算顺序不同，舍入后结果可能不同。</li>
-</ul>
-<h3 id="3-fused-multiply-addfma"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#3-fused-multiply-addfma">3. Fused Multiply-Add（FMA，融合乘加）</a></h3>
-<ul>
-<li>FMA 运算：一次性计算 rn(X×Y+Z)，只进行一次舍入，比单独乘法和加法更精确。</li>
-<li>传统做法需两次舍入：rn(rn(X×Y)+Z)。</li>
-<li>FMA 可有效减少精度损失，尤其在“减法消元”场景（如 a²-b，a≈b）下。</li>
-<li>NVIDIA GPU（计算能力2.0及以上）硬件支持 FMA，CPU 通常不支持。</li>
-</ul>
-<h3 id="4"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#4">4. 向量点积精度示例</a></h3>
-<ul>
-<li>点积计算可用串行方法（分步乘加）、FMA方法（融合乘加）、并行归约方法。</li>
-<li>FMA 方法能提升最终结果的精度。</li>
-</ul>
-<h3 id="5-cuda"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#5-cuda">5. CUDA 浮点运算相关</a></h3>
-<ul>
-<li>计算能力2.0及以上的设备支持单/双精度 IEEE 754 运算和 FMA。</li>
-<li>CUDA 支持四种舍入模式：rn（最近偶数）、rz（向零）、ru（向正）、rd（向负）。</li>
-<li>可用编译器参数控制精度与性能：</li>
-<li><code>-ftz={true|false}</code>：是否将非正规数 flush 为0。</li>
-<li><code>-prec-div={true|false}</code>、<code>-prec-sqrt={true|false}</code>：控制除法和平方根精度。</li>
-<li>默认模式下，单精度运算支持正规舍入和非正规数。</li>
-</ul>
-<h3 id="6-cpugpu"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#6-cpugpu">6. CPU与GPU结果差异</a></h3>
-<ul>
-<li>GPU支持硬件FMA，CPU通常不支持，导致结果可能不同。</li>
-<li>并行归约、线程数等实现细节也会影响最终结果。</li>
-<li>数学库（如 sin、cos）在不同平台实现不同，结果可能略有差异。</li>
-</ul>
-<h3 id="7"><a class="toclink" href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html#7">7. 编程建议</a></h3>
-<ul>
-<li>优先使用 FMA 运算，提升精度和性能。</li>
-<li>对比 CPU/GPU 结果时需考虑实现细节和平台差异。</li>
-<li>了解 GPU 计算能力，合理选择精度和运算方式。</li>
-<li>利用 CUDA math 库函数，权衡性能与精度。</li>
-</ul>
-<hr />
-<p>参考：<a href="https://docs.nvidia.com/cuda/floating-point/index.html">NVIDIA CUDA Floating Point Guide</a></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html">
+          Continue reading
+        </a>
+      </nav>
     
   </div>
 </article>
