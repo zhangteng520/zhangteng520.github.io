@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://zhangteng520.github.io/blog/category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">
+        <link rel="canonical" href="https://zhangteng520.github.io/blog/category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">
       
       
-        <link rel="prev" href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">
+        <link rel="prev" href="gpu.html">
       
       
-        <link rel="next" href="../archive/2025.html">
+        <link rel="next" href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>性能优化 - Teng's Blog</title>
+        <title>多线程 - Teng's Blog</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              性能优化
+              多线程
             
           </span>
         </div>
@@ -1358,31 +1358,6 @@
                 
   
   
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    多线程
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1404,7 +1379,7 @@
   
   
   <span class="md-ellipsis">
-    性能优化
+    多线程
     
   </span>
   
@@ -1412,12 +1387,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link md-nav__link--active">
+      <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    性能优化
+    多线程
     
   </span>
   
@@ -1442,16 +1417,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      我的控制系统升级心得
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux CPU 优化笔记
+      多线程比单线程更快吗？
     </span>
   </a>
   
@@ -1461,6 +1427,31 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    性能优化
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1510,16 +1501,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      我的控制系统升级心得
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux-cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Linux CPU 优化笔记
+      多线程比单线程更快吗？
     </span>
   </a>
   
@@ -1537,7 +1519,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="_1">性能优化</h1>
+        <h1 id="_1">多线程</h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -1546,19 +1528,19 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-07-19 00:00:00+00:00">July 19, 2025</time></li>
+          <time datetime="2025-05-03 00:00:00+00:00">May 3, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="cpp.html" class="md-meta__link">Cpp</a>, 
-              <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-meta__link">性能优化</a></li>
+              <a href="cpu.html" class="md-meta__link">cpu</a>, 
+              <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-meta__link">多线程</a></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              2 min read
             
           </li>
         
@@ -1567,52 +1549,12 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../2025/07/19/%E6%88%91%E7%9A%84%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E5%BF%83%E5%BE%97.html">我的控制系统升级心得</a></h2>
-<p>读研期间，因课题组需要，写一款多轴控制系统的框架和具体实现，保证控制系统的高效性，可靠性和拓展性。</p>
-<p>现在这款控制系统已经在几十台机器上运作了，如何PLC，控制卡制作成的大型工业设备</p>
+    <h2 id="_1"><a class="toclink" href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">多线程比单线程更快吗？</a></h2>
+<p>多线程给人的第一直觉是单线程要快一些，耗时要短一些，因为毕竟有多个核心一起参与工作，相当于多增加了一些人手，但是现实真的是这样的？</p>
 
     
       <nav class="md-post__action">
-        <a href="../2025/07/19/%E6%88%91%E7%9A%84%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E5%BF%83%E5%BE%97.html">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-07-19 00:00:00+00:00">July 19, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="linux.html" class="md-meta__link">Linux</a>, 
-              <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-meta__link">性能优化</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="linux-cpu"><a class="toclink" href="../2025/07/19/linux-cpu-%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html">Linux CPU 优化笔记</a></h2>
-
-    
-      <nav class="md-post__action">
-        <a href="../2025/07/19/linux-cpu-%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html">
+        <a href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">
           Continue reading
         </a>
       </nav>
