@@ -2,134 +2,150 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://zhangteng520.github.io/index.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/bashInWindows.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/git_tips.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/pythonUsage.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/CUDA/cuda-key-word.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/CUDA/threadId.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/CUDA/thrust.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/CUDA/z_others.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/LearningTips/Cpp/lamda.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/Projects/AM/AmazingAm.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/Projects/Bridge/Bridge.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/index.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2025/07/19/ai%E8%BE%85%E5%8A%A9%E7%BC%96%E7%A8%8B.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2025/07/19/%E6%88%91%E7%9A%84%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E5%8D%87%E7%BA%A7%E5%BF%83%E5%BE%97.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
+         <loc>https://zhangteng520.github.io/blog/2025/05/03/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97.html</loc>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2025/05/03/nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2025/07/19/linux-cpu-%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/2024/01/31/%E4%BB%A3%E7%A0%81%E5%9D%8F%E7%9A%84%E5%91%B3%E9%81%93.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
+         <loc>https://zhangteng520.github.io/blog/2025/07/19/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html</loc>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/archive/2025.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/archive/2024.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/code.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/ai.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/cpp.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/linux.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
+         <loc>https://zhangteng520.github.io/blog/category/vector.html</loc>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/cpu.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html</loc>
-         <lastmod>2025-08-10</lastmod>
-    </url>
-    <url>
-         <loc>https://zhangteng520.github.io/blog/category/gpu.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/fp.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
+         <loc>https://zhangteng520.github.io/blog/category/gpu.html</loc>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/category/share.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
     </url>
     <url>
          <loc>https://zhangteng520.github.io/blog/page/2/index.html</loc>
-         <lastmod>2025-08-10</lastmod>
+         <lastmod>2025-08-13</lastmod>
+    </url>
+    <url>
+         <loc>https://zhangteng520.github.io/blog/archive/2025/page/2.html</loc>
+         <lastmod>2025-08-13</lastmod>
     </url>
 </urlset>

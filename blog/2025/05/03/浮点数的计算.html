@@ -10,25 +10,25 @@
       
       
       
-        <link rel="canonical" href="https://zhangteng520.github.io/LearningTips/CUDA/threadId.html">
+        <link rel="canonical" href="https://zhangteng520.github.io/blog/2025/05/03/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97.html">
       
       
-        <link rel="prev" href="cuda-key-word.html">
+        <link rel="prev" href="nvidia-cuda-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E4%B8%8E-fma-%E7%AC%94%E8%AE%B0.html">
       
       
-        <link rel="next" href="thrust.html">
+        <link rel="next" href="%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>CUDA 线程ID计算笔记 - Teng's Blog</title>
+        <title>浮点数的计算 - Teng's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cuda-id" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CUDA 线程ID计算笔记
+              浮点数的计算
             
           </span>
         </div>
@@ -135,7 +135,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
+      <a href="../../../../index.html" class="md-tabs__link">
         
   
   
@@ -152,13 +152,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../bashInWindows.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../LearningTips/bashInWindows.html" class="md-tabs__link">
           
   
   
@@ -185,7 +183,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Projects/AM/AmazingAm.html" class="md-tabs__link">
+        <a href="../../../../Projects/AM/AmazingAm.html" class="md-tabs__link">
           
   
   
@@ -204,11 +202,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../blog/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../index.html" class="md-tabs__link">
           
   
   
@@ -231,7 +231,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -242,7 +244,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../../../../index.html" class="md-nav__link">
         
   
   
@@ -279,29 +281,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -314,7 +311,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             LearningTips
@@ -328,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bashInWindows.html" class="md-nav__link">
+      <a href="../../../../LearningTips/bashInWindows.html" class="md-nav__link">
         
   
   
@@ -351,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../git_tips.html" class="md-nav__link">
+      <a href="../../../../LearningTips/git_tips.html" class="md-nav__link">
         
   
   
@@ -374,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pythonUsage.html" class="md-nav__link">
+      <a href="../../../../LearningTips/pythonUsage.html" class="md-nav__link">
         
   
   
@@ -394,8 +391,6 @@
                 
   
   
-    
-  
   
   
     
@@ -406,11 +401,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
@@ -426,7 +421,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             CUDA
@@ -440,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cuda-key-word.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/cuda-key-word.html" class="md-nav__link">
         
   
   
@@ -460,32 +455,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    CUDA 线程ID计算笔记
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="threadId.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../LearningTips/CUDA/threadId.html" class="md-nav__link">
         
   
   
@@ -496,71 +469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 基本概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 一维线程ID计算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 二维线程ID计算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 三维线程ID计算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 示例
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -573,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="thrust.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/thrust.html" class="md-nav__link">
         
   
   
@@ -596,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="z_others.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/z_others.html" class="md-nav__link">
         
   
   
@@ -668,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cpp/lamda.html" class="md-nav__link">
+      <a href="../../../../LearningTips/Cpp/lamda.html" class="md-nav__link">
         
   
   
@@ -788,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/AM/AmazingAm.html" class="md-nav__link">
+      <a href="../../../../Projects/AM/AmazingAm.html" class="md-nav__link">
         
   
   
@@ -860,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/Bridge/Bridge.html" class="md-nav__link">
+      <a href="../../../../Projects/Bridge/Bridge.html" class="md-nav__link">
         
   
   
@@ -932,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
+      <a href="../../../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
         
   
   
@@ -1004,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
+      <a href="../../../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
         
   
   
@@ -1039,24 +947,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1069,7 +982,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -1080,12 +993,14 @@
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../../blog/index.html" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../index.html" class="md-nav__link">
         
   
   
@@ -1151,7 +1066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/archive/2025.html" class="md-nav__link">
+      <a href="../../../archive/2025.html" class="md-nav__link">
         
   
   
@@ -1176,7 +1091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/archive/2024.html" class="md-nav__link">
+      <a href="../../../archive/2024.html" class="md-nav__link">
         
   
   
@@ -1250,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/ai.html" class="md-nav__link">
+      <a href="../../../category/ai.html" class="md-nav__link">
         
   
   
@@ -1275,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/code.html" class="md-nav__link">
+      <a href="../../../category/code.html" class="md-nav__link">
         
   
   
@@ -1300,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/cpp.html" class="md-nav__link">
+      <a href="../../../category/cpp.html" class="md-nav__link">
         
   
   
@@ -1325,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/fp.html" class="md-nav__link">
+      <a href="../../../category/fp.html" class="md-nav__link">
         
   
   
@@ -1350,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/linux.html" class="md-nav__link">
+      <a href="../../../category/linux.html" class="md-nav__link">
         
   
   
@@ -1375,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/share.html" class="md-nav__link">
+      <a href="../../../category/share.html" class="md-nav__link">
         
   
   
@@ -1400,7 +1315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/vector.html" class="md-nav__link">
+      <a href="../../../category/vector.html" class="md-nav__link">
         
   
   
@@ -1425,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/cpu.html" class="md-nav__link">
+      <a href="../../../category/cpu.html" class="md-nav__link">
         
   
   
@@ -1450,7 +1365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/gpu.html" class="md-nav__link">
+      <a href="../../../category/gpu.html" class="md-nav__link">
         
   
   
@@ -1475,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
+      <a href="../../../category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
         
   
   
@@ -1500,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../blog/category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
+      <a href="../../../category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
         
   
   
@@ -1539,6 +1454,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1560,45 +1477,33 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 基本概念
+      1. 浮点数的表示
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-id" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 一维线程ID计算
+      2. 浮点加法的步骤
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 浮点加法的步骤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 举个例子
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 二维线程ID计算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-id" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 三维线程ID计算
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 示例
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1611,65 +1516,209 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="cuda-id">CUDA 线程ID计算笔记</h1>
-<p>在 CUDA 编程中，线程 ID 的计算是并行算法实现的基础。每个线程都有唯一的标识符，可用于数据分配和任务划分。</p>
-<h2 id="1">1. 基本概念</h2>
-<ul>
-<li><code>threadIdx.x/y/z</code>：线程在 block 内的索引</li>
-<li><code>blockIdx.x/y/z</code>：block 在 grid 内的索引</li>
-<li><code>blockDim.x/y/z</code>：每个 block 的线程数</li>
-<li><code>gridDim.x/y/z</code>：grid 中 block 的数量</li>
-</ul>
-<h2 id="2-id">2. 一维线程ID计算</h2>
-<p><div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-</span></code></pre></div>
-<code>tid</code> 即全局唯一线程编号，常用于一维数据处理。</p>
-<h2 id="3-id">3. 二维线程ID计算</h2>
-<p><div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
-</span></code></pre></div>
-适用于二维数据（如图像）。</p>
-<h2 id="4-id">4. 三维线程ID计算</h2>
-<p><div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">z</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">z</span><span class="p">;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tid_x</span><span class="w"> </span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="n">tid_y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="p">)</span><span class="w"> </span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="o">+</span><span class="w"> </span><span class="n">tid_z</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">gridDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">gridDim</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">y</span><span class="p">);</span>
-</span></code></pre></div>
-适用于三维数据处理。</p>
-<h2 id="5">5. 示例</h2>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">__global__</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">kernel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blockIdx</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">blockDim</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">threadIdx</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1">// 使用 tid 进行数据处理</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
-</span></code></pre></div>
-<hr />
-<p>合理计算线程ID是实现高效并行的关键。</p>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
             </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-05-03 00:00:00+00:00" class="md-ellipsis">May 3, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../category/fp.html">FP</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+
+
+<h1 id="_1">浮点数的计算</h1>
+<p>浮点数的加法虽然看起来只是“把两个数加起来”，但实际上在计算机里会经过一整套 IEEE 754 浮点运算流程，主要步骤是：</p>
+<!-- more -->
+<hr />
+<h2 id="1">1. 浮点数的表示</h2>
+<p>以 IEEE 754 **单精度（float, 32 位）**为例：</p>
+<ul>
+<li><strong>1 位符号位</strong>（sign）：0 表示正，1 表示负</li>
+<li><strong>8 位指数位</strong>（exponent）：带偏移量的二进制指数，偏移值为 127</li>
+<li><strong>23 位尾数位</strong>（mantissa/fraction）：隐含一个最高位的 1（除非是非规格化数）</li>
+</ul>
+<p>形式：</p>
+<p>$$
+(-1)^{sign} \times 1.fraction \times 2^{exponent - 127}
+$$</p>
+<hr />
+<h2 id="2">2. 浮点加法的步骤</h2>
+<p>假设我们要计算 $A + B$：</p>
+<ol>
+<li>
+<p><strong>拆分符号位、指数位、尾数位</strong>
+   把两个数都分成 (sign, exponent, mantissa) 的形式。</p>
+</li>
+<li>
+<p><strong>对阶（Align Exponents）</strong></p>
+</li>
+<li>
+<p>比较两个数的指数</p>
+</li>
+<li>将较小指数的尾数右移（相当于除以 2），直到指数相等</li>
+<li>
+<p>移动时要保留额外的位（guard, round, sticky）以便后续舍入</p>
+</li>
+<li>
+<p><strong>尾数相加/相减（Add/Subtract Mantissas）</strong></p>
+</li>
+<li>
+<p>如果符号相同，尾数直接相加</p>
+</li>
+<li>
+<p>如果符号不同，尾数相减（相当于做减法）</p>
+</li>
+<li>
+<p><strong>规格化（Normalize Result）</strong></p>
+</li>
+<li>
+<p>如果尾数超过了 $1.xxxxx$ 的范围，就右移尾数并增加指数</p>
+</li>
+<li>
+<p>如果尾数小于 $1.0000...$，就左移尾数并减少指数</p>
+</li>
+<li>
+<p><strong>舍入（Rounding）</strong>
+   IEEE 754 默认使用“向偶数舍入”（Round to Nearest, ties to Even）</p>
+</li>
+<li>
+<p><strong>检查溢出/下溢</strong></p>
+</li>
+<li>
+<p>指数太大：溢出 → 得到 ±∞</p>
+</li>
+<li>指数太小：下溢 → 变成非规格化数或 0</li>
+</ol>
+<hr />
+<h3 id="3">3. 举个例子</h3>
+<p>计算 $1.5_{10} + 0.5_{10}$</p>
+<ol>
+<li>
+<p><strong>表示形式</strong></p>
+</li>
+<li>
+<p>1.5 → sign=0, exp=127, mantissa=1.1</p>
+</li>
+<li>
+<p>0.5 → sign=0, exp=126, mantissa=1.0</p>
+</li>
+<li>
+<p><strong>对阶</strong></p>
+</li>
+<li>
+<p>指数差 1 → 0.5 的尾数右移一位：1.0 → 0.1（指数加 1）</p>
+</li>
+<li>
+<p>两个指数都变成 127</p>
+</li>
+<li>
+<p><strong>尾数相加</strong></p>
+</li>
+<li>
+<p>1.1 + 0.1 = 10.0（二进制）</p>
+</li>
+<li>
+<p><strong>规格化</strong></p>
+</li>
+<li>
+<p>10.0 → 1.0 × 2^1</p>
+</li>
+<li>
+<p>指数从 127 增加到 128</p>
+</li>
+<li>
+<p><strong>合成结果</strong></p>
+</li>
+<li>
+<p>指数 128 → 真正指数 = 1</p>
+</li>
+<li>最终值 = $2.0$</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -1704,10 +1753,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
