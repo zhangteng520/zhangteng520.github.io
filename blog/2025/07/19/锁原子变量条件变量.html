@@ -10,25 +10,25 @@
       
       
       
-        <link rel="canonical" href="https://zhangteng520.github.io/blog/category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">
+        <link rel="canonical" href="https://zhangteng520.github.io/blog/2025/07/19/%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">
       
       
-        <link rel="prev" href="gpu.html">
+        <link rel="prev" href="vector.html">
       
       
-        <link rel="next" href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">
+        <link rel="next" href="linux-cpu-%E4%BC%98%E5%8C%96%E7%AC%94%E8%AE%B0.html">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>多线程 - Teng's Blog</title>
+        <title>锁、原子变量、条件变量 - Teng's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              多线程
+              锁、原子变量、条件变量
             
           </span>
         </div>
@@ -135,7 +135,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
+      <a href="../../../../index.html" class="md-tabs__link">
         
   
   
@@ -156,7 +156,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../LearningTips/bashInWindows.html" class="md-tabs__link">
+        <a href="../../../../LearningTips/bashInWindows.html" class="md-tabs__link">
           
   
   
@@ -183,7 +183,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Projects/AM/AmazingAm.html" class="md-tabs__link">
+        <a href="../../../../Projects/AM/AmazingAm.html" class="md-tabs__link">
           
   
   
@@ -208,7 +208,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../index.html" class="md-tabs__link">
+        <a href="../../../index.html" class="md-tabs__link">
           
   
   
@@ -231,7 +231,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -242,7 +244,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../../../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/bashInWindows.html" class="md-nav__link">
+      <a href="../../../../LearningTips/bashInWindows.html" class="md-nav__link">
         
   
   
@@ -346,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/git_tips.html" class="md-nav__link">
+      <a href="../../../../LearningTips/git_tips.html" class="md-nav__link">
         
   
   
@@ -369,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/pythonUsage.html" class="md-nav__link">
+      <a href="../../../../LearningTips/pythonUsage.html" class="md-nav__link">
         
   
   
@@ -433,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/cuda-key-word.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/cuda-key-word.html" class="md-nav__link">
         
   
   
@@ -456,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/framework.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/framework.html" class="md-nav__link">
         
   
   
@@ -479,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/threadId.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/threadId.html" class="md-nav__link">
         
   
   
@@ -502,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/thrust.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/thrust.html" class="md-nav__link">
         
   
   
@@ -525,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/z_others.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/z_others.html" class="md-nav__link">
         
   
   
@@ -597,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/Cpp/lamda.html" class="md-nav__link">
+      <a href="../../../../LearningTips/Cpp/lamda.html" class="md-nav__link">
         
   
   
@@ -717,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/AM/AmazingAm.html" class="md-nav__link">
+      <a href="../../../../Projects/AM/AmazingAm.html" class="md-nav__link">
         
   
   
@@ -740,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/AM/thermalImager.html" class="md-nav__link">
+      <a href="../../../../Projects/AM/thermalImager.html" class="md-nav__link">
         
   
   
@@ -812,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/Bridge/Bridge.html" class="md-nav__link">
+      <a href="../../../../Projects/Bridge/Bridge.html" class="md-nav__link">
         
   
   
@@ -884,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
+      <a href="../../../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
         
   
   
@@ -956,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
+      <a href="../../../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
         
   
   
@@ -1037,12 +1039,14 @@
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../index.html" class="md-nav__link">
         
   
   
@@ -1108,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2025.html" class="md-nav__link">
+      <a href="../../../archive/2025.html" class="md-nav__link">
         
   
   
@@ -1133,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2024.html" class="md-nav__link">
+      <a href="../../../archive/2024.html" class="md-nav__link">
         
   
   
@@ -1161,8 +1165,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1173,11 +1175,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1193,7 +1195,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
@@ -1209,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ai.html" class="md-nav__link">
+      <a href="../../../category/ai.html" class="md-nav__link">
         
   
   
@@ -1234,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="code.html" class="md-nav__link">
+      <a href="../../../category/code.html" class="md-nav__link">
         
   
   
@@ -1259,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cpp.html" class="md-nav__link">
+      <a href="../../../category/cpp.html" class="md-nav__link">
         
   
   
@@ -1284,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fp.html" class="md-nav__link">
+      <a href="../../../category/fp.html" class="md-nav__link">
         
   
   
@@ -1309,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux.html" class="md-nav__link">
+      <a href="../../../category/linux.html" class="md-nav__link">
         
   
   
@@ -1334,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="share.html" class="md-nav__link">
+      <a href="../../../category/share.html" class="md-nav__link">
         
   
   
@@ -1359,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vector.html" class="md-nav__link">
+      <a href="../../../category/vector.html" class="md-nav__link">
         
   
   
@@ -1384,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cpu.html" class="md-nav__link">
+      <a href="../../../category/cpu.html" class="md-nav__link">
         
   
   
@@ -1409,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gpu.html" class="md-nav__link">
+      <a href="../../../category/gpu.html" class="md-nav__link">
         
   
   
@@ -1429,36 +1431,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    多线程
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
         
   
   
@@ -1469,44 +1447,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      锁、原子变量、条件变量
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      多线程比单线程更快吗？
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1521,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
+      <a href="../../../category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
         
   
   
@@ -1560,6 +1500,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1579,18 +1521,117 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      锁、原子变量、条件变量
+      锁
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="锁">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      底层实现
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      重入锁
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      非重入锁
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      多线程比单线程更快吗？
+      原子变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="原子变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      底层实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件变量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="条件变量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      底层实现
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      假醒
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、假醒的本质原因
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      各自的使用场景
     </span>
   </a>
   
@@ -1605,102 +1646,161 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="_1">多线程</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-07-19 00:00:00+00:00">July 19, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-meta__link">多线程</a></li>
-        
-        
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-07-19 00:00:00+00:00" class="md-ellipsis">July 19, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">多线程</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../2025/07/19/%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">锁、原子变量、条件变量</a></h2>
-
-    
-      <nav class="md-post__action">
-        <a href="../2025/07/19/%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-05-03 00:00:00+00:00">May 3, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="cpu.html" class="md-meta__link">cpu</a>, 
-              <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-meta__link">多线程</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">多线程比单线程更快吗？</a></h2>
-<p>多线程给人的第一直觉是单线程要快一些，耗时要短一些，因为毕竟有多个核心一起参与工作，相当于多增加了一些人手，但是现实真的是这样的？</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
+    <article class="md-content__inner md-typeset">
       
         
-          
-
-
-
-<nav class="md-pagination">
   
-</nav>
-        
+
+
+
+
+<h1 id="_1">锁、原子变量、条件变量</h1>
+<!-- more -->
+<h2 id="_2">锁</h2>
+<p>锁（Mutex）用于保护临界区，防止多个线程同时访问共享资源，保证数据一致性。</p>
+<h3 id="_3">底层实现</h3>
+<ul>
+<li>常见实现方式有自旋锁（spinlock）、互斥锁（mutex）、读写锁（rwlock）等。</li>
+<li>操作系统通常通过原子指令（如CAS、Test-and-Set）和信号量实现锁机制。</li>
+<li>用户态锁（如C++11的<code>std::mutex</code>）通常封装了操作系统的互斥量（如Windows的Critical Section、Linux的pthread_mutex_t）。</li>
+</ul>
+<h3 id="_4">重入锁</h3>
+<ul>
+<li>重入锁（Recursive Lock）允许同一线程多次获得同一把锁，不会发生死锁。</li>
+<li>典型实现是为每个锁记录拥有者线程ID和重入次数。</li>
+<li>适用场景：递归调用、同一线程多次加锁。</li>
+</ul>
+<h3 id="_5">非重入锁</h3>
+<ul>
+<li>非重入锁（Non-Recursive Lock）同一线程不能重复获得锁，否则会死锁。</li>
+<li>适用场景：简单的互斥保护，无递归需求。</li>
+</ul>
+<h2 id="_6">原子变量</h2>
+<p>原子变量（Atomic Variable）是一种特殊类型的变量，支持原子操作，保证并发环境下的读写安全，无需加锁。</p>
+<h3 id="_7">底层实现</h3>
+<ul>
+<li>依赖于CPU提供的原子指令（如x86的<code>LOCK</code>前缀、ARM的<code>LDREX/STREX</code>）。</li>
+<li>C++11提供<code>std::atomic</code>，Java提供<code>AtomicInteger</code>等。</li>
+<li>原子操作包括原子读写、原子加减、CAS（Compare And Swap）等。</li>
+</ul>
+<h2 id="_8">条件变量</h2>
+<p>条件变量（Condition Variable）用于线程间同步，允许线程在某个条件满足前进入等待状态。</p>
+<h3 id="_9">底层实现</h3>
+<ul>
+<li>通常与互斥锁配合使用。</li>
+<li>操作系统实现如pthread_cond_t（Linux）、ConditionVariable（Windows）。</li>
+<li>线程调用<code>wait()</code>进入等待，其他线程调用<code>notify_one()</code>或<code>notify_all()</code>唤醒。</li>
+</ul>
+<h3 id="_10">假醒</h3>
+<h3 id="_11"><strong>一、假醒的本质原因</strong></h3>
+<p>假醒的根源与操作系统的线程调度和条件变量的底层实现有关：
+1. <strong>内核级等待队列的特性</strong>：<br />
+   条件变量的等待队列由操作系统内核维护，当线程调用<code>wait</code>时，会被放入队列并阻塞。内核在某些情况下（如信号中断、线程调度冲突、队列状态异常）可能会“意外”唤醒线程，即使没有收到<code>notify</code>信号。<br />
+   - 例如，Linux的<code>pthread_cond_wait</code>可能因系统信号（如<code>SIGINT</code>）中断等待，导致线程提前唤醒。</p>
+<ol>
+<li><strong>性能与正确性的权衡</strong>：<br />
+   操作系统为了简化条件变量的实现（或优化性能），不保证“只有<code>notify</code>能唤醒线程”。强制避免假醒会增加内核复杂度（如跟踪每个唤醒的来源），反而降低效率。因此，标准允许假醒存在，将处理责任交给用户态代码。</li>
+</ol>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">worker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lock</span><span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="c1">// 关键：用while循环而非if，重新检查条件</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">ready</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 若假醒，会重新判断条件</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">cv</span><span class="p">.</span><span class="n">wait</span><span class="p">(</span><span class="n">lock</span><span class="p">);</span><span class="w">  </span><span class="c1">// 释放锁并等待，被唤醒后重新加锁</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="c1">// 条件满足后执行操作</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_12">各自的使用场景</h2>
+<ul>
+<li><strong>锁</strong>：保护临界区，防止数据竞争，适用于需要互斥访问的场景。</li>
+<li><strong>原子变量</strong>：适用于简单的计数器、自增、自减等无需复杂同步的场景，性能优于锁。</li>
+<li><strong>条件变量</strong>：适用于线程间需要等待某个条件成立再继续执行的场景，如生产者-消费者</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -1737,10 +1837,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>

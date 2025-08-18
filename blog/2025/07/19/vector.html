@@ -10,25 +10,25 @@
       
       
       
-        <link rel="canonical" href="https://zhangteng520.github.io/blog/category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">
+        <link rel="canonical" href="https://zhangteng520.github.io/blog/2025/07/19/vector.html">
       
       
-        <link rel="prev" href="gpu.html">
+        <link rel="prev" href="%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html">
       
       
-        <link rel="next" href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">
+        <link rel="next" href="%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>多线程 - Teng's Blog</title>
+        <title>vector - Teng's Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -49,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#vector" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +82,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-header__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              多线程
+              vector
             
           </span>
         </div>
@@ -135,7 +135,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
+      <a href="../../../../index.html" class="md-tabs__link">
         
   
   
@@ -156,7 +156,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../LearningTips/bashInWindows.html" class="md-tabs__link">
+        <a href="../../../../LearningTips/bashInWindows.html" class="md-tabs__link">
           
   
   
@@ -183,7 +183,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Projects/AM/AmazingAm.html" class="md-tabs__link">
+        <a href="../../../../Projects/AM/AmazingAm.html" class="md-tabs__link">
           
   
   
@@ -208,7 +208,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../index.html" class="md-tabs__link">
+        <a href="../../../index.html" class="md-tabs__link">
           
   
   
@@ -231,7 +231,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -242,7 +244,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
+    <a href="../../../../index.html" title="Teng&#39;s Blog" class="md-nav__button md-logo" aria-label="Teng's Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -260,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../../../../index.html" class="md-nav__link">
         
   
   
@@ -323,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/bashInWindows.html" class="md-nav__link">
+      <a href="../../../../LearningTips/bashInWindows.html" class="md-nav__link">
         
   
   
@@ -346,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/git_tips.html" class="md-nav__link">
+      <a href="../../../../LearningTips/git_tips.html" class="md-nav__link">
         
   
   
@@ -369,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/pythonUsage.html" class="md-nav__link">
+      <a href="../../../../LearningTips/pythonUsage.html" class="md-nav__link">
         
   
   
@@ -433,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/cuda-key-word.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/cuda-key-word.html" class="md-nav__link">
         
   
   
@@ -456,7 +458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/framework.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/framework.html" class="md-nav__link">
         
   
   
@@ -479,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/threadId.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/threadId.html" class="md-nav__link">
         
   
   
@@ -502,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/thrust.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/thrust.html" class="md-nav__link">
         
   
   
@@ -525,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/CUDA/z_others.html" class="md-nav__link">
+      <a href="../../../../LearningTips/CUDA/z_others.html" class="md-nav__link">
         
   
   
@@ -597,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LearningTips/Cpp/lamda.html" class="md-nav__link">
+      <a href="../../../../LearningTips/Cpp/lamda.html" class="md-nav__link">
         
   
   
@@ -717,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/AM/AmazingAm.html" class="md-nav__link">
+      <a href="../../../../Projects/AM/AmazingAm.html" class="md-nav__link">
         
   
   
@@ -740,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/AM/thermalImager.html" class="md-nav__link">
+      <a href="../../../../Projects/AM/thermalImager.html" class="md-nav__link">
         
   
   
@@ -812,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/Bridge/Bridge.html" class="md-nav__link">
+      <a href="../../../../Projects/Bridge/Bridge.html" class="md-nav__link">
         
   
   
@@ -884,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
+      <a href="../../../../Projects/FlexibleBending/%E6%8A%98%E5%BC%AF%E6%9C%BA.html" class="md-nav__link">
         
   
   
@@ -956,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
+      <a href="../../../../Projects/ImageCorrect/%E8%A7%86%E8%A7%89%E7%9F%AB%E6%AD%A3.html" class="md-nav__link">
         
   
   
@@ -1037,12 +1039,14 @@
                 
   
   
+    
+  
   
     
   
   
-    <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../index.html" class="md-nav__link">
         
   
   
@@ -1108,7 +1112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2025.html" class="md-nav__link">
+      <a href="../../../archive/2025.html" class="md-nav__link">
         
   
   
@@ -1133,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archive/2024.html" class="md-nav__link">
+      <a href="../../../archive/2024.html" class="md-nav__link">
         
   
   
@@ -1161,8 +1165,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1173,11 +1175,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -1193,7 +1195,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Categories
@@ -1209,7 +1211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="ai.html" class="md-nav__link">
+      <a href="../../../category/ai.html" class="md-nav__link">
         
   
   
@@ -1234,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="code.html" class="md-nav__link">
+      <a href="../../../category/code.html" class="md-nav__link">
         
   
   
@@ -1259,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cpp.html" class="md-nav__link">
+      <a href="../../../category/cpp.html" class="md-nav__link">
         
   
   
@@ -1284,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fp.html" class="md-nav__link">
+      <a href="../../../category/fp.html" class="md-nav__link">
         
   
   
@@ -1309,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linux.html" class="md-nav__link">
+      <a href="../../../category/linux.html" class="md-nav__link">
         
   
   
@@ -1334,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="share.html" class="md-nav__link">
+      <a href="../../../category/share.html" class="md-nav__link">
         
   
   
@@ -1359,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="vector.html" class="md-nav__link">
+      <a href="../../../category/vector.html" class="md-nav__link">
         
   
   
@@ -1384,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cpu.html" class="md-nav__link">
+      <a href="../../../category/cpu.html" class="md-nav__link">
         
   
   
@@ -1409,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gpu.html" class="md-nav__link">
+      <a href="../../../category/gpu.html" class="md-nav__link">
         
   
   
@@ -1429,36 +1431,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    多线程
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../category/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
         
   
   
@@ -1469,44 +1447,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      锁、原子变量、条件变量
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      多线程比单线程更快吗？
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1521,7 +1461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
+      <a href="../../../category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="md-nav__link">
         
   
   
@@ -1560,6 +1500,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1579,9 +1521,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#vector_1" class="md-nav__link">
     <span class="md-ellipsis">
-      锁、原子变量、条件变量
+      vector的扩容机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector对象的大小
     </span>
   </a>
   
@@ -1590,7 +1541,52 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      多线程比单线程更快吗？
+      内存序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      右值引用和移动构造函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aslr" class="md-nav__link">
+    <span class="md-ellipsis">
+      进程的内存分区及ASLR 机制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector对象的大小
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存序
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      右值引用和移动构造函数
     </span>
   </a>
   
@@ -1605,102 +1601,161 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="_1">多线程</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-07-19 00:00:00+00:00">July 19, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-meta__link">多线程</a></li>
-        
-        
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-07-19 00:00:00+00:00" class="md-ellipsis">July 19, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../category/linux.html">Linux</a>, 
+                              <a href="../../../category/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html">性能优化</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../2025/07/19/%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">锁、原子变量、条件变量</a></h2>
-
-    
-      <nav class="md-post__action">
-        <a href="../2025/07/19/%E9%94%81%E5%8E%9F%E5%AD%90%E5%8F%98%E9%87%8F%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F.html">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-05-03 00:00:00+00:00">May 3, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="cpu.html" class="md-meta__link">cpu</a>, 
-              <a href="%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="md-meta__link">多线程</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">多线程比单线程更快吗？</a></h2>
-<p>多线程给人的第一直觉是单线程要快一些，耗时要短一些，因为毕竟有多个核心一起参与工作，相当于多增加了一些人手，但是现实真的是这样的？</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">
-          Continue reading
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
+    <article class="md-content__inner md-typeset">
       
         
-          
-
-
-
-<nav class="md-pagination">
   
-</nav>
-        
+
+
+
+
+<h1 id="vector">vector</h1>
+<!-- more -->
+
+<h2 id="vector_1">vector的扩容机制</h2>
+<p><code>std::vector</code>的扩容机制是其性能优化的关键。当元素数量超过当前容量时，vector会自动分配更大的内存空间，并将原有元素移动到新空间。</p>
+<ul>
+<li><strong>resize(n)</strong>：调整vector的元素个数为n，若n大于当前size，则插入默认值元素；若小于则删除多余元素。</li>
+<li><strong>reserve(n)</strong>：预留容量为n，不改变size，只影响capacity，避免多次扩容带来的性能损耗。</li>
+</ul>
+<p>扩容通常会按2倍或1.5倍策略增长（具体实现依赖于STL库），每次扩容都需要将原有元素移动到新内存，涉及大量拷贝或移动操作。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">v</span><span class="p">.</span><span class="n">reserve</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span><span class="c1">// 预分配，减少扩容次数</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="vector_2">vector对象的大小</h2>
+<p><code>std::vector</code>对象本身只包含三个指针（或指针+size_t）：指向数据区的指针、size、capacity。其本身占用的内存很小，实际数据存储在堆上。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"> </span><span class="c1">// 通常为24字节（x64）</span>
+</span></code></pre></div>
+<h2 id="_1">内存序</h2>
+<p>内存序（Endianness）指多字节数据在内存中的存储顺序。常见有大端（Big Endian）和小端（Little Endian）。</p>
+<ul>
+<li>x86/x64平台普遍采用小端序。</li>
+<li>网络字节序为大端。</li>
+</ul>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">union</span><span class="w"> </span><span class="nc">U</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mh">0x12345678</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0x78</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;小端&quot;</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">else</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;大端&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="_2">右值引用和移动构造函数</h2>
+<p>右值引用（T&amp;&amp;）和移动构造函数极大提升了vector等容器的性能，避免了不必要的深拷贝。</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 移动构造，避免拷贝</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="c1">// v变为空，资源转移到v2</span>
+</span></code></pre></div>
+<p>vector扩容时，优先调用元素的移动构造函数（如果有），否则退化为拷贝构造。</p>
+<h2 id="aslr">进程的内存分区及ASLR 机制</h2>
+<p>现代操作系统下，进程的虚拟地址空间通常分为：</p>
+<ul>
+<li>代码段（.text）</li>
+<li>数据段（.data/.bss）</li>
+<li>堆（heap）</li>
+<li>栈（stack）</li>
+<li>共享库映射区</li>
+</ul>
+<p>ASLR（Address Space Layout Randomization，地址空间布局随机化）是一种安全机制，每次程序启动时，堆、栈、库等的基址都会随机变化，防止攻击者利用固定地址进行攻击。</p>
+<h2 id="vector_3">vector对象的大小</h2>
+<p>vector对象本身很小，通常只包含指向数据的指针、size和capacity等成员（如x64下24字节），实际数据存储在堆上。vector的大小与元素数量无关。</p>
+<h2 id="_3">内存序</h2>
+<p>内存序（大小端）影响多字节数据的存储顺序。常见判断方法：</p>
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x12345678</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">0x78</span><span class="p">)</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;小端序&quot;</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">else</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;大端序&quot;</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="_4">右值引用和移动构造函数</h2>
+<p>右值引用（T&amp;&amp;）和移动构造函数可极大提升vector等容器的性能，避免不必要的深拷贝。vector扩容或元素转移时，优先调用移动构造函数。</p>
+<p>常见用法：
+<div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 移动构造</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="c1">// v资源转移到v2</span>
+</span></code></pre></div></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -1737,10 +1792,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "content.code.annotate", "content.tabs.link", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
