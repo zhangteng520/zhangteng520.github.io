@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://zhangteng520.github.io/blog/2025/05/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%AF%94%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%9B%B4%E5%BF%AB%E5%90%97.html">
       
       
-        <link rel="prev" href="%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97.html">
+        <link rel="prev" href="%E8%AF%BB%E5%8F%96%E5%A4%A7%E5%9E%8B%E6%96%87%E4%BB%B6.html">
       
       
         <link rel="next" href="../../07/19/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.html">
@@ -1411,6 +1411,31 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../category/file.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../../../category/gpu.html" class="md-nav__link">
         
   
@@ -1532,15 +1557,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      继续分析
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
       结果讨论
     </span>
   </a>
@@ -1548,7 +1564,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       优化方向
     </span>
@@ -1884,29 +1900,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">继续分析</h2>
-<table>
-<thead>
-<tr>
-<th>多线程</th>
-<th>时间耗时ms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>任务的创建（deffered）</td>
-<td>24</td>
-</tr>
-<tr>
-<td>任务的执行</td>
-<td>1638</td>
-</tr>
-<tr>
-<td>结果的拷贝</td>
-<td>1120</td>
-</tr>
-</tbody>
-</table>
+<p><strong>分析</strong>
+模型数据量 = 长（11） * 宽（11） * 高（60）* Sizeof（Voxel）(8) = 58kB</p>
+<p>缓存行大小64kB</p>
+<p>intel i7-10700K 使用的是MESIF 协议</p>
+<p>模型太小了，这波炸了啊</p>
 <p><strong>完整计算</strong></p>
 <p>从第一层到最后一层，计算任务量线性增加</p>
 <table>
@@ -1926,23 +1924,32 @@
 <td>100.82</td>
 </tr>
 <tr>
-<td>多线程</td>
-<td>172.53</td>
+<td>OpenMP</td>
+<td>47</td>
+</tr>
+<tr>
+<td>多线程(ansyc)</td>
+<td>100.53</td>
+</tr>
+<tr>
+<td>多线程（deffered）</td>
+<td>137</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_4">结果讨论</h2>
+<h2 id="_3">结果讨论</h2>
 <ul>
-<li>多线确实加速计算的速度，但是结果拷贝的开销也不小</li>
-<li>主要开销，锁的开销，内存的复制</li>
-<li>实践建议，任务计算时间最好远大于内存的复制开销</li>
-<li>SSE计算太快了吧，且还有优化空间</li>
+<li>SSE计算很快了吧，且还有优化空间，但是获取相邻像素温度场还是依赖单线程函数</li>
+<li>同样是多线程，凭什么OpenMP比我的快这么多</li>
+<li>单线程怎么跟多线程速度差不多？</li>
+<li>ansyc和deffered的结果差这么多，肯定还有那些地方存在数据竞争</li>
 </ul>
-<h2 id="_5">优化方向</h2>
+<h2 id="_4">优化方向</h2>
 <ul>
 <li>cuda并行计算，利用好1024个核心子线程，实现并行规约计算</li>
 <li>深度优化多线程，降低锁的粒度</li>
 <li>不使用vector，并将温度和标志位分别使用C风格的裸数组</li>
+<li>为何不把上下左右六个体素融合起来计算</li>
 </ul>
 
 
